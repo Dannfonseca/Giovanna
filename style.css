@@ -548,6 +548,16 @@ input[type=number] {
 
 @media only screen and (max-width: 800px) {
 
+
+    .header {
+        padding: 10px 0; /* Reduzir o padding */
+    }
+
+    .logoMenu img {
+        height: 55px; /* Ajuste a altura da logo */
+    }
+
+
     #btnMobile {
         display: flex;
         gap: 5px;
@@ -558,6 +568,8 @@ input[type=number] {
         cursor: pointer;
         color: #011C40;
         font-family: 'Nunito Sans', sans-serif;
+        position: relative; /* Adicionado para permitir o uso de right */
+        right: 20px; /* Ajuste este valor para mover o botão para a esquerda */
     }
 
     #hamburguer {
