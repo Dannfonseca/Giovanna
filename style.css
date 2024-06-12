@@ -129,7 +129,8 @@ ul {
     display: grid;
     grid-template: 1fr 1fr 1fr 3fr 1fr / 1.5fr 1fr;
     gap: 15px;
-    max-width: 500px;
+    max-width: 450px;    
+    margin: auto; /* Centraliza o formulário */
 }
 
 .inputNome1,
@@ -234,46 +235,22 @@ input[type=number] {
 @media only screen and (max-width: 770px) {
 
     .formContactMain {
-        display: grid;
-        grid-template: 1fr 1fr 1fr 1fr 3fr 1fr / 1fr 1fr;
-
-
-        max-width: none;
+        grid-template: repeat(4, 1fr) 3fr 1fr / 1fr; /* Quatro linhas e uma coluna */
+        gap: 10px;
     }
 
-    .inputNome1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 1;
-    }
-
-    .inputEmail1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 2;
-    }
-
-    .inputTel1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-
-    .inputAssunto1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .inputNome1, .inputEmail1, .inputTel1, .inputAssunto1, .inputMsg1 {
+        grid-column: 1 / -1; /* Cada campo ocupa uma linha inteira */
     }
 
     .inputMsg1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
         resize: none;
     }
 
     .containerBtn1 {
-        grid-column-start: 2;
-        grid-column-end: 3;
+        grid-column: 1 / -1; /* O botão ocupa uma linha inteira */
+        display: flex;
+        justify-content: center; /* Centraliza o botão */
     }
 
 }
@@ -509,6 +486,7 @@ input[type=number] {
     background-color: white;
     display: flex;
     align-items: center;
+    width: 20px;
 }
 
 .gio {
@@ -554,9 +532,10 @@ input[type=number] {
     }
 
     .logoMenu img {
-        height: 55px; /* Ajuste a altura da logo */
+        height: 40px; /* Ajuste a altura da logo */
     }
 
+    .gio 
 
     #btnMobile {
         display: flex;
@@ -589,11 +568,12 @@ input[type=number] {
         transition: .3s;
         position: relative;
     }
+    
 
     #menu {
         display: block;
         position: absolute;
-        width: 100%;
+        width: 100%;        
         top: 110px;
         right: 0px;
         background-color: white;
@@ -663,9 +643,12 @@ input[type=number] {
 
 .formContactFooter {
     display: grid;
-    grid-template: 1fr 1fr 1fr 3fr 1fr / 2fr 1fr;
+    grid-template: 1fr 1fr 1fr 3fr 1fr / 1.5fr 1fr;
     gap: 15px;
-    max-width: 510px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto; /* Centraliza o formulário */    
+    padding: 10px; /* Adiciona um pouco de padding para espaço interno */
 }
 
 .inputNome2,
@@ -738,12 +721,11 @@ input:focus {
         width: 100%;
     }
 
-    .formContactFooter {
-        display: grid;
-        grid-template: 1fr 1fr 1fr 3fr 1fr / 50% 50%;
-
-        max-width: none;
-        width: 90%;
+    .formContactMain, .formContactFooter {
+        grid-template: 1fr 1fr 1fr 3fr 1fr / 1fr; /* Uma coluna para o formulário */
+        gap: 15px;
+        max-width: 100%; /* Remove a limitação de largura */
+        width: 98%; /* Quase a largura total do contêiner */
     }
 
 }
@@ -751,11 +733,8 @@ input:focus {
 @media only screen and (max-width: 770px) {
 
     .formContactFooter {
-        display: grid;
-        grid-template: 1fr 1fr 1fr 1fr 3fr 1fr / 2fr 1fr;
+        grid-template: repeat(4, 1fr) 3fr 1fr / 1fr; /* Quatro linhas e uma coluna */
         gap: 10px;
-
-        max-width: none;
     }
 
     .inputNome2 {
@@ -789,8 +768,9 @@ input:focus {
     }
 
     .containerBtn2 {
-        grid-column-start: 2;
-        grid-column-end: 3;
+        grid-column: 1 / -1; /* O botão ocupa uma linha inteira */
+        display: flex;
+        justify-content: center; /* Centraliza o botão */
     }
 
 }
