@@ -133,7 +133,7 @@ ul {
     margin: auto; /* Centraliza o formulário */
 }
 
-.inputNome1,
+..inputNome1,
 .inputEmail1,
 .inputTel1,
 .inputAssunto1,
@@ -141,6 +141,8 @@ ul {
     padding: 10px; /* Adiciona padding para melhor usabilidade */
     border-radius: 5px; /* Bordas arredondadas */
     border: 1px solid #cccccc; /* Borda sutil */
+    width: 100%; /* Garante que todos os inputs tenham a mesma largura */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura total */
 }
 
 .containerBtn1 {
@@ -535,6 +537,7 @@ input[type=number] {
         height: 40px; /* Ajuste a altura da logo */
     }
 
+
     #btnMobile {
         display: flex;
         gap: 5px;
@@ -729,6 +732,32 @@ input:focus {
 }
 
 @media only screen and (max-width: 770px) {
+
+    .formContactMain {
+        grid-template: repeat(4, 1fr) 3fr 1fr / 1fr; /* Quatro linhas e uma coluna */
+        gap: 10px;
+    }
+
+    .inputNome1,
+    .inputEmail1,
+    .inputTel1,
+    .inputAssunto1,
+    .inputMsg1 {
+        grid-column: 1 / -1; /* Cada campo ocupa uma linha inteira */
+        width: 100%; /* Garante que todos os inputs tenham a mesma largura */
+        box-sizing: border-box; /* Inclui padding e borda no cálculo da largura total */
+    }
+
+    .inputMsg1 {
+        resize: none; /* Remove redimensionamento */
+        height: auto; /* Ajusta a altura para caber o conteúdo */
+    }
+
+    .containerBtn1 {
+        grid-column: 1 / -1; /* O botão ocupa uma linha inteira */
+        display: flex;
+        justify-content: center; /* Centraliza o botão */
+    }
 
     .formContactFooter {
         grid-template: repeat(4, 1fr) 3fr 1fr / 1fr; /* Quatro linhas e uma coluna */
